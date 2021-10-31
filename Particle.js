@@ -40,10 +40,10 @@ class Particle
                    random(0,255),
                    random(5,30));
           }
+        }
     }
     display()
     {
       ellipse(this.loc.x,this.loc.y,this.w,this.w);
     }
   }
-}
