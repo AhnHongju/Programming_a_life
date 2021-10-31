@@ -55,8 +55,12 @@ function draw() {
   {
     button_a=true;
   }
-  if(button_a)
+  if(button_a==true)
   {
     stroke(80,188,223,opacity);
+    if(time%10==1)
+    {
+      opacity=opacity-1;
+    }
   }
 }
