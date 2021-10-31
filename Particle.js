@@ -12,7 +12,7 @@ class Particle
 
     update()
     {
-      if(KeyIsPressed)
+      if(keyIsPressed)
       {
         this.button = true;
       }
