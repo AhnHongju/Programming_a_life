@@ -1,6 +1,8 @@
 let particles = [];
 let speedLimit = 5;
 let time = 0;
+let opacity=80;
+let button_a = false;
 function setup() {
   createCanvas(720, 480);
 }
@@ -8,7 +10,7 @@ function setup() {
 function draw() {
   background(0);
   time++;
-  if (particles.length < 20) 
+  if (particles.length < 20)
     particles.push(new Particle(2));
 
   for (let i = 0; i < particles.length; i++) {
@@ -48,5 +50,13 @@ function draw() {
     particles[0].vel.limit(5);
   } else {
     interaction(particles.length - 1, 0, speedLimit);
+  }
+  if(keyIsPressed)
+  {
+    button_a=true;
+  }
+  if(button_a)
+  {
+    stroke(80,188,223,opacity);
   }
 }
