@@ -46,3 +46,4 @@ class Particle
       ellipse(this.loc.x,this.loc.y,this.w,this.w);
     }
   }
+}
