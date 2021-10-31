@@ -2,15 +2,29 @@ class Particle
   {
     constructor(size)
     {
+      this.button= false;
       this.loc=createVector(width/2,height/2);
       this.vel=createVector(0,0);
       this.w=size;
       stroke(255,255,255,50);
-      
+
     }
-    
+
     update()
     {
+      let opacity;
+      if(KeyIsPressed)
+      {
+        this.button = true;
+      }
+      if(this.button)
+      {
+        opacity=50;
+      }
+      else if(this.button == false)
+      {
+        opacity=random(5,30);
+      }
       let acc=createVector(random(-1,1),random(-1,1));
       this.loc.add(this.vel);
       this.vel.add(acc);
@@ -20,7 +34,7 @@ class Particle
           stroke(random(0,255),
                  random(0,255),
                  random(0,255),
-                 random(5,30));
+                 opacity);
         }
       if(this.loc.y>height||this.loc.y<0)
         {
@@ -28,7 +42,7 @@ class Particle
           stroke(random(0,255),
                  random(0,255),
                  random(0,255),
-                 random(5,30));
+                 opacity);
         }
     }
     display()
