@@ -12,18 +12,9 @@ class Particle
 
     update()
     {
-      let opacity;
       if(KeyIsPressed)
       {
         this.button = true;
-      }
-      if(this.button)
-      {
-        opacity=50;
-      }
-      else if(this.button == false)
-      {
-        opacity=random(5,30);
       }
       let acc=createVector(random(-1,1),random(-1,1));
       this.loc.add(this.vel);
@@ -31,19 +22,24 @@ class Particle
       if(this.loc.x>width||this.loc.x<0)
         {
           this.vel.x*=-1;
-          stroke(random(0,255),
-                 random(0,255),
-                 random(0,255),
-                 opacity);
+          if(this.button==false)
+          {
+            stroke(random(0,255),
+                   random(0,255),
+                   random(0,255),
+                   random(5,30));
+          }
         }
       if(this.loc.y>height||this.loc.y<0)
         {
           this.vel.y*=-1;
-          stroke(random(0,255),
-                 random(0,255),
-                 random(0,255),
-                 opacity);
-        }
+          if(this.button==false)
+          {
+            stroke(random(0,255),
+                   random(0,255),
+                   random(0,255),
+                   random(5,30));
+          }
     }
     display()
     {
