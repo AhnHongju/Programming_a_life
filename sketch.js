@@ -10,7 +10,7 @@ function setup() {
 function draw() {
   background(0);
   time++;
-  if (particles.length < 20)
+  if (time%60==1&&particles.length < 20)
     particles.push(new Particle(2));
 
   for (let i = 0; i < particles.length; i++) {
